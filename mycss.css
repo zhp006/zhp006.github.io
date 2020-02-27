@@ -1,0 +1,813 @@
+@font-face {
+  font-family: 'LeviReBrushed';
+  url('./src/font/LeviReBrushed/LeviReBrushed/LeviReBrushed.woff2') format('woff2'),
+  url('./src/font/LeviReBrushed/LeviReBrushed/LeviReBrushed.woff') format('woff'),
+  url('./src/font/LeviReBrushed/LeviReBrushed/LeviReBrushed.ttf') format('truetype'),
+  url('./src/font/LeviReBrushed/LeviReBrushed/LeviReBrushed.svg') format('svg'),
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color:rgb(235,235,232);
+	height:100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	/* smooth scroll */
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	scroll-snap-type:y mandatory;
+/*	overflow: hidden;*/
+}
+/*--------------------Navigation bar--------------------*/
+.navbar{
+	position: fixed;
+	top:0;
+	z-index: 1;
+	display: flex;
+	width: 100%;
+	height: 60px;
+}
+
+.navbar ul{
+	display: flex;
+	list-style-type: none;
+	width: 100%;
+	justify-content: center;
+  	overflow: hidden;
+  	/*background-color: #333;*/
+  	background-color: rgb(235,235,232);
+}
+
+.navbar ul li{
+	float: left;
+}
+
+.navbar ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  height: 100%;
+  text-decoration: none;
+  font-family: LeviReBrushed;
+  font-size: 20px;
+
+}
+
+.navbar ul li a:hover {
+  transition: 0.3s;
+  transform: scale(1.2);
+}
+/*--------------------Navigation bar--------------------*/
+
+/*-----------------------Sections-----------------------*/
+section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+	scroll-snap-align: center;
+}
+
+section h1{
+	font-size: 4rem;
+	font-family: LeviReBrushed;
+}
+
+section p{
+	font-size: 1.5rem;
+}
+
+/* Home section */
+section#home{
+	background-color: rgb(235,235,232);
+	background-image: url("./src/logo.png");
+	background-repeat: no-repeat;
+	background-position: 60%;
+	overflow: hidden;
+}
+.eraser-container{
+	width: 790px;
+	height: 530px;
+	position: relative;
+	transform: rotate(-15deg);
+}
+#eraser1{
+	width: 100%;
+	height: 25%;
+	background-color: rgb(235,235,232);
+}
+#eraser2{
+	width: 100%;
+	height: 25%;
+	background-color: rgb(235,235,232);
+}
+#eraser3{
+	width: 100%;
+	height: 25%;
+	background-color: rgb(235,235,232);
+}
+#eraser4{
+	width: 100%;
+	height: 25%;
+	background-color: rgb(235,235,232);
+}
+
+/* About section */
+section#about{
+	background-color: rgb(235,235,232);
+}
+section#about .profile-img{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	bottom: -40px;
+	background-color: black;
+	background-image: url("./src/profile-pic.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+section#about h1{
+	position: relative;
+	top: 60px;
+	background-color: rgb(235,235,232);
+}
+.intro{
+	position: relative;
+	top: -150px;
+	height: 350px;
+	width: 900px;
+	overflow: hidden;
+}
+.blink{
+	animation: 1.5s blinking infinite;
+}
+@keyframes blinking{
+	0%{
+		opacity: 1; 
+	}
+	50%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+.feather-pen{
+	position: relative;
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+	right: -520px;
+	bottom: -170px;
+	background-image: url("./src/alternative.png");
+	background-repeat: no-repeat;
+/*	background-position: center;*/
+}
+
+/* Education */
+section#education{
+	background-color: rgb(235,235,232);
+	align-items: center;
+	font-family: LeviReBrushed;
+	position: relative;
+}
+section#education h1{
+	position: absolute;
+	top: 80px;
+}
+.ucsd-logo{
+	position: absolute;
+	top: 150px;
+	height: 350px;
+	width: 350px;
+	left: 200px;
+	background-image: url("./src/ucsd.png");
+	background-position: center;
+	background-size: cover;
+}
+.ucsd-intro{
+	position: absolute;
+	top: 250px;
+	right: 260px;
+	text-align: left;
+}
+.ucsd-intro p{
+	font-size: 40px;
+}
+.usc-logo{
+	position: absolute;
+	height: 300px;
+	width: 250px;
+	right: 250px;
+	bottom: 25px;
+	background-image: url("./src/usc.png");
+	background-position: center;
+	background-size: cover;
+}
+.usc-intro{
+	position: absolute;
+	bottom: 100px;
+	text-align: left;
+}
+.usc-intro p{
+	font-size: 40px;
+}
+
+
+/* Skills*/
+section#skills{
+	background-color: rgb(235,235,232);
+	position: relative;
+}
+section#skills h1{
+	position: absolute;
+	font-size: 150px;
+	top: 350px;
+	animation: grow 3s ease-in-out infinite alternate;
+	transition: 0.6s;
+	cursor: pointer;
+}
+@keyframes grow{
+	from{transform: scale(1);}
+	to{transform: scale(1.1);}
+}
+
+/*@keyframes reveal{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+@keyframes hide{
+	from{opacity: 1;}
+	to{opacity: 0;}
+}*/
+.bg-bw{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("./src/skills-bw.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#bg-color{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("./src/skills-color.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition: 3s;
+}
+@keyframes ripple{
+	from{clip-path: circle(4%);}
+	to{clip-path: circle(70%);}
+}
+#bg-bw2{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: url("./src/skills-bw.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition: 3s;
+}
+@keyframes ripple2{
+	from{clip-path: circle(2%);}
+	to{clip-path: circle(70%);}
+}
+/*.bg-color:active{
+	opacity: 1;
+}*/
+/*black and white logo*/
+#java{
+	position: absolute;
+	height: 150px;
+	width: 150px;
+	left: 150px;
+	top: 210px;
+	background-image: url("./src/java-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+#ps{
+	position: absolute;
+	height: 180px;
+	width: 180px;
+	top: 120px;
+	left: 250px;
+	background-image: url("./src/ps-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+#windows{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	top: 140px;
+	background-image: url("./src/windows-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+#git{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	top: 120px;
+	right: 210px;
+	background-image: url("./src/git-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+#html5{
+	position: absolute;
+	height: 180px;
+	width: 180px;
+	bottom: 180px;
+	right: 320px;
+	background-image: url("./src/html5-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+#css3{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	bottom: 10px;
+	right: 390px;
+	background-image: url("./src/css3-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+#js{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	bottom: 40px;
+	right: 210px;
+	background-image: url("./src/js-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+#cpp{
+	position: absolute;
+	height: 280px;
+	width: 280px;
+	bottom: -30px;
+	left: 440px;
+	background-image: url("./src/cpp-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+#python{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	bottom: 150px;
+	left: 240px;
+	background-image: url("./src/python-bw.png");
+	background-size: cover;
+	background-position: center;
+}
+
+/*color logo*/
+#java-c{
+	position: absolute;
+	height: 150px;
+	width: 150px;
+	left: 150px;
+	top: 210px;
+	background-image: url("./src/java.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 7s;
+}
+#ps-c{
+	position: absolute;
+	height: 180px;
+	width: 180px;
+	top: 120px;
+	left: 250px;
+	background-image: url("./src/ps.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 6s;
+}
+#windows-c{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	top: 140px;
+	background-image: url("./src/windows.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 6s;
+}
+#git-c{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	top: 120px;
+	right: 210px;
+	background-image: url("./src/git.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 5s;
+}
+#html5-c{
+	position: absolute;
+	height: 180px;
+	width: 180px;
+	bottom: 180px;
+	right: 320px;
+	background-image: url("./src/html5.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 6s;
+}
+#css3-c{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	bottom: 10px;
+	right: 390px;
+	background-image: url("./src/css3.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 9s;
+}
+#js-c{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	bottom: 40px;
+	right: 210px;
+	background-image: url("./src/js.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 6s;
+}
+#cpp-c{
+	position: absolute;
+	height: 280px;
+	width: 280px;
+	bottom: -30px;
+	left: 440px;
+	background-image: url("./src/cpp.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 5s;
+}
+#python-c{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	bottom: 150px;
+	left: 240px;
+	background-image: url("./src/python.png");
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: 7s;
+}
+
+
+
+
+
+
+/* Projects */
+section#projects{
+	background-color: rgb(235,235,232);
+	position: relative;
+}
+section#projects h1{
+	position: absolute;
+	top:10%;
+}
+
+.test_container{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+.test_slider{
+	width: 400%;
+	height: 100%;
+	position: relative;
+}
+.slides{
+	float: left;
+	height: 100%;
+	width: calc(100% / 4);
+	background-color: rgb(235,235,232);
+	position: relative;
+}
+.next{
+	position: absolute;
+	height: 100px;
+	width: 120px;
+	bottom: 1%;
+	right: 1%;
+	background-image: url("./src/arrow.png");
+	background-size: cover;
+	background-position: center;
+	transition: 1s;
+}
+.prev{
+	position: absolute;
+	height: 100px;
+	width: 120px;
+	bottom: 1%;
+	left: 2%;
+	background-image: url("./src/arrow2.png");
+	background-size: cover;
+	background-position: center;
+	transition: 1s;
+}
+.next:hover, .prev:hover{
+	transform: scale(1.2);
+}
+
+/* Left side of slides*/
+.left_side{
+	position: absolute;
+	height: 85%;
+	width: 50%;
+}
+
+.line{
+	position: absolute;
+	height: 15%;
+	width: 90%;
+	top: 25%;
+	background-image: url("./src/line.png");
+	background-size: cover;
+	background-position: center;
+}
+.proj_times{
+	position: absolute;
+	height: 10%;
+	width: 20%;
+	top: 37%;
+	right: 18%;
+}
+.proj_times p{
+	font-family: LeviReBrushed;
+	font-size: 1.5rem;
+}
+.proj_names{
+	position: absolute;
+	height: 10%;
+	width: 75%;
+	top: 10%;
+	left: 4%;
+}
+.proj_names p{
+	font-family: LeviReBrushed;
+	font-size: 3rem;
+}
+#proj_name2, #proj_name3{
+	top: 20%;
+}
+.proj_intros{
+	position: absolute;
+	height: 50%;
+	width: 100%;
+	top: 45%;
+}
+.proj_intros p{
+	font-family: LeviReBrushed;
+	text-align: left;
+	font-size: 2rem;
+	text-indent: 40px;
+}
+
+/* Right side of slides */
+.right_side{
+	position: absolute;
+	height: 85%;
+	width: 50%;
+	right: 0%;
+}
+
+.brain-bw{
+	position: absolute;
+	height: 110%;
+	width: 120%;
+	top: 4%;
+	right: 25%;
+	background-image: url("./src/brain-bw.png");
+	background-position: center;
+	background-size: cover;
+}
+.brain-color{
+	position: absolute;
+	height: 110%;
+	width: 120%;
+	top: 4%;
+	right: 25%;
+	background-image: url("./src/brain-color.png");
+	opacity: 0;
+	background-position: center;
+	background-size: cover;
+	transition: 2s;
+	animation: flash 4s linear infinite;
+}
+@keyframes flash{
+	0%{opacity: 0;}
+	50%{opacity: 1;}
+	100%{opacity: 0;}
+}
+
+.screen1{
+	position: absolute;
+	height: 30%;
+	width: 70%;
+	top: 22%;
+	right: 5%;
+	background-image: url("./src/proj2-1.png");
+	background-position: center;
+	background-size: cover;
+	transition: 1.2s;
+}
+.screen1:hover{
+	transform: scale(1.2);
+	z-index: 1;
+}
+.screen2{
+	position: absolute;
+	height: 50%;
+	width: 50%;
+	top: 30%;
+	right: 30%;
+	background-image: url("./src/proj2-2.png");
+	background-position: center;
+	background-size: cover;
+	transition: 1.2s;
+}
+.screen2:hover{
+	transform: scale(1.2);
+	z-index: 1;
+}
+.screen3{
+	position: absolute;
+	height: 67%;
+	width: 35%;
+	top: 40%;
+	right: 50%;
+	background-image: url("./src/proj2-3.png");
+	background-position: center;
+	transition: 1.2s;
+}
+.screen3:hover{
+	transform: scale(1.2);
+	z-index: 1;
+}
+
+
+#chefs_youtube{
+	position: absolute;
+	height: 40%;
+	width: 50%;
+	top: 40%;
+	right: 28%;
+}
+.video_frame{
+	position: absolute;
+	height: 110%;
+	width: 110%;
+	top: 4%;
+	right: -5%;
+	background-image: url("./src/frame.png");
+	background-position: center;
+	background-size: cover;
+}
+
+/* Project cover */
+.leaves_set{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+.leaves_set div{
+	position: absolute;
+	display: block;
+}
+
+.leaves_set div:nth-child(1){
+	top: 50%;
+	animation: float 15s linear infinite;
+	animation-delay: -7s;
+}
+.leaves_set div:nth-child(2){
+	top: 40%;
+	animation: float 28s linear infinite;
+	animation-delay: -5s;
+}
+.leaves_set div:nth-child(3){
+	top: 55%;
+	animation: float 12s linear infinite;
+	animation-delay: -3s;
+}
+.leaves_set div:nth-child(4){
+	top: 70%;
+	animation: float 14s linear infinite;
+	animation-delay: -2s;
+}
+.leaves_set div:nth-child(5){
+	top: 80%;
+	animation: float 17s linear infinite;
+	animation-delay: -5s;
+}
+.leaves_set div:nth-child(6){
+	top: 64%;
+	animation: float 20s linear infinite;
+}
+.leaves_set div:nth-child(7){
+	top: 53%;
+	animation: float 13s linear infinite;
+}
+.leaves_set div:nth-child(8){
+	top: 90%;
+	animation: float 15s linear infinite;
+}
+@keyframes float{
+	0%{
+		left: -10%;
+		opacity: 0;
+		transform: rotate(0deg);
+	}
+	10%{
+		opacity: 1;
+	}
+	20%{
+		opacity: 1;
+		transform: rotate(45deg);
+	}
+	40%{
+		transform: rotate(90deg);
+	}
+	60%{
+		transform: rotate(135deg);
+	}
+	70%{
+		transform: rotate(180deg);
+	}
+	90%{
+		transform: rotate(225deg);
+	}
+	100%{
+		left: 110%;
+		top: 30%;
+		transform: rotate(270deg);
+	}
+}
+.set2{
+	transform: scaleX(2);
+	filter: blur(2px);
+}
+.set3{
+	transform: scaleX(0.8) rotateX(180deg);
+	filter: blur(4px);
+}
+.cover_title{
+	position: absolute;
+	top: 40%;
+	left: 40%;
+}
+.cover_title h1{
+	font-size: 7rem;
+}
+/*-----------------------Sections-----------------------*/
+
+
